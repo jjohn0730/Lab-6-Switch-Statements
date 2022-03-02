@@ -1,0 +1,49 @@
+/*//Johanna Johnh
+// Computer Science I - Mika Morgan
+// Lab #6 - Switch Statements
+// 03.02.2022
+*/
+#include <iostream> 
+#include <fstream> 
+using namespace std;
+
+int main() {
+	// Create a File for my outcome
+	ofstream outfile;
+	outfile.open("While-Switch.txt");
+	int count = 1;
+	while (count <= 5) //create a while loop 
+	{
+		int selection;
+
+		cout << "Which formula do you want to see?\n\n";
+		cout << "1.  Area of a circle\n";
+		cout << "2.  Area of a rectangle\n";
+		cout << "3.  Volume of a cylinder\n";
+		cout << "4.  None of them!\n";
+		cin >> selection;
+
+		switch (selection) // use switch case instead of if else 
+		{
+		case(1):
+			outfile << "Pi times radius squared\n";
+			break; // using break so it will not run the other cases
+		case(2):
+			outfile << "Length times width\n";
+			break;
+		case(3):
+			outfile << "Pi times radius squared times height\n";
+			break;
+		case(4):
+			outfile << "Well okay then...Goodbye!\n";
+			break;
+		default:
+			outfile << "Not good with numbers, eh?\n";
+			break;
+		}
+		count += 1;
+	}
+	outfile.close(); //close file 
+	system("pause");
+	return 0;
+}
